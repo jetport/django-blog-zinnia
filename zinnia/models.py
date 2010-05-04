@@ -1,3 +1,4 @@
+#coding: utf-8
 """Models of Zinnia"""
 from datetime import datetime
 
@@ -17,6 +18,7 @@ from zinnia.managers import EntryPublishedManager
 from zinnia.managers import DRAFT, HIDDEN, PUBLISHED
 from zinnia.settings import USE_BITLY
 from zinnia.settings import UPLOAD_TO
+from zinnia.settings import SECTIONS
 
 
 class Category(models.Model):
@@ -25,6 +27,7 @@ class Category(models.Model):
     title = models.CharField(_('title'), max_length=50)
     slug = models.SlugField(help_text=_('used for publication'))
     description = models.TextField(_('description'), blank=True)
+    section         = models.CharField(_('section'),max_length=1,choices=SECTIONS)
 
     def entries_published_set(self):
         """Return only the entries published"""
@@ -57,7 +60,7 @@ class Entry(models.Model):
     excerpt = models.TextField(_('excerpt'), blank=True,
                                 help_text=_('optional element'))
 
-    tags = TagField()
+    tags = TagField(_('tag'))
     categories = models.ManyToManyField(Category, verbose_name=_('categories'))
     related = models.ManyToManyField('self', verbose_name=_('related entries'),
                                      blank=True, null=True)
@@ -159,7 +162,7 @@ class Entry(models.Model):
         ordering = ['-creation_date']
         verbose_name = _('entry')
         verbose_name_plural = _('entries')
-        permissions = (('can_view_all', 'Can view all'),
-                       ('can_change_author', 'Can change author'), )
+        permissions = (('can_view_all', _('Can view all') ),
+                       ('can_change_author', _('Can change author') ), ) + SECTIONS
 
 moderator.register(Entry, EntryCommentModerator)
