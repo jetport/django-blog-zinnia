@@ -17,6 +17,7 @@ from zinnia.settings import TWITTER_USER
 from zinnia.settings import TWITTER_PASSWORD
 from zinnia.settings import PING_DIRECTORIES
 from zinnia.settings import SAVE_PING_DIRECTORIES
+from zinnia.settings import SECTIONS
 from zinnia.ping import DirectoryPinger
 
 
@@ -156,12 +157,24 @@ class EntryAdmin(admin.ModelAdmin):
             return queryset
         return request.user.entry_set.all()
 
+    def get_sections(self,request):
+        sections=[]
+        for p in dict(SECTIONS).keys():
+            if request.user.has_perm( u'%s.%s' % (self.opts.app_label,p ) ):
+                sections.append( p )
+        return sections
+
     def formfield_for_manytomany(self, db_field, request, **kwargs):
         """Filters the disposable authors"""
         if db_field.name == 'authors' and \
                not request.user.has_perm('zinnia.can_change_author'):
             kwargs['queryset'] = User.objects.filter(pk=request.user.pk)
             return db_field.formfield(**kwargs)
+
+        elif db_field.name == 'categories':
+            c=self.get_sections(request)
+            kwargs['queryset'] =Category.objects.filter( section__in = c )
+
         return super(EntryAdmin, self).formfield_for_manytomany(
             db_field, request, **kwargs)
 
