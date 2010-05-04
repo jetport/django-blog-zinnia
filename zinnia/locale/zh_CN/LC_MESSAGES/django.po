@@ -2,7 +2,7 @@
 # Copyright (C) 2008 THE Zinnia'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the Zinnia package.
 # Mark Renton <indexofire@gmail.com>, 2010.
-#
+#revised by  jetport@gmail.com 
 msgid ""
 msgstr ""
 "Project-Id-Version: Zinnia 0.5\n"
@@ -26,17 +26,17 @@ msgstr "选项"
 
 #: admin.py:38
 msgid "Sorting"
-msgstr "排序"
+msgstr "分类"
 
 #: admin.py:56
 #, python-format
 msgid "%(title)s (%(word_count)i words)"
-msgstr ""
+msgstr "%(title)s (%(word_count)i 个字符)"
 
 #: admin.py:60
 #, python-format
 msgid "%(title)s (%(comments)i comments)"
-msgstr ""
+msgstr "%(title)s (%(comments)i 条评论)"
 
 #: admin.py:63 models.py:25 models.py:52
 msgid "title"
@@ -44,7 +44,7 @@ msgstr "标题"
 
 #: admin.py:75
 msgid "author(s)"
-msgstr "排序"
+msgstr "作者"
 
 #: admin.py:87
 msgid "category(s)"
@@ -60,7 +60,7 @@ msgstr "网站"
 
 #: admin.py:111
 msgid "is actual"
-msgstr "是否准确"
+msgstr "是否实况"
 
 #: admin.py:117
 msgid "is visible"
@@ -85,19 +85,19 @@ msgstr "缩略URL"
 
 #: admin.py:187
 msgid "Set the entries to the user"
-msgstr "设置日志为此用户"
+msgstr "设置自己为所选日志的作者"
 
 #: admin.py:192
 msgid "Set entries selected as published"
-msgstr "设置所选日志为已发布"
+msgstr "发布所选日志"
 
 #: admin.py:197
 msgid "Set entries selected as hidden"
-msgstr "设置所选日志为隐藏"
+msgstr "隐藏所选日志"
 
 #: admin.py:206
 msgid "Tweet entries selected"
-msgstr "选中推特记录"
+msgstr "推特所选日志"
 
 #: admin.py:211
 msgid "Close the comments for selected entries"
@@ -106,11 +106,11 @@ msgstr "关闭所选日志的评论功能"
 #: admin.py:222
 #, python-format
 msgid "%i directories succesfully pinged."
-msgstr "%i 类别被成功置顶"
+msgstr "成功提交所选日志到搜索引擎"
 
 #: admin.py:223
 msgid "Ping Directories for selected entries"
-msgstr "置顶所选日志的目录"
+msgstr "把所选日志提交到搜索引擎"
 
 #: feeds.py:79
 #, python-format
@@ -120,7 +120,7 @@ msgstr "%s - 新闻"
 #: feeds.py:80
 #, python-format
 msgid "The last news for the site %s"
-msgstr "站点的最新新闻 %s"
+msgstr "站点 %s 的最新新闻"
 
 #: feeds.py:104
 #, python-format
@@ -170,7 +170,7 @@ msgstr "对于 %s 的评论"
 #: feeds.py:194
 #, python-format
 msgid "The last comments for the news %s"
-msgstr "对于新闻 %s 的最后评论"
+msgstr "对于新闻 %s 的最新评论"
 
 #: models.py:26 models.py:65
 msgid "used for publication"
@@ -206,7 +206,7 @@ msgstr "图片"
 
 #: models.py:55
 msgid "used for illustration"
-msgstr "用于描述"
+msgstr "用于插图"
 
 #: models.py:56
 msgid "content"
@@ -214,7 +214,7 @@ msgstr "内容"
 
 #: models.py:57
 msgid "excerpt"
-msgstr "例外"
+msgstr "摘要"
 
 #: models.py:58
 msgid "optional element"
@@ -258,7 +258,7 @@ msgstr "结束发布日期"
 
 #: models.py:80
 msgid "sites publication"
-msgstr "其他网站发布"
+msgstr "发布网站"
 
 #: models.py:160
 msgid "entry"
@@ -279,7 +279,7 @@ msgstr "没有搜索到相关模式"
 #: plugins/cms_plugins.py:16 templates/zinnia/entry_archive.html:4
 #: templates/zinnia/entry_list.html:4
 msgid "Latest entries"
-msgstr "最后日志"
+msgstr "最新日志"
 
 #: plugins/cms_plugins.py:43
 msgid "Selected entries"
@@ -456,7 +456,7 @@ msgstr "热门日志"
 #: templates/zinnia/tags/archives_entries.html:5
 #: templates/zinnia/tags/link_archives_entries.html:2
 msgid "Archives"
-msgstr "归类"
+msgstr "归档"
 
 #: templates/zinnia/category_list.html:7
 msgid "Category list"
@@ -485,7 +485,7 @@ msgstr[1] ""
 #: templates/zinnia/entry_archive_base.html:9
 #: templates/zinnia/entry_archive_base.html:12
 msgid "RSS Feed"
-msgstr "RSS 种子"
+msgstr "RSS 源"
 
 #: templates/zinnia/entry_archive_base.html:25
 #: templates/zinnia/entry_list.html:4
@@ -503,7 +503,7 @@ msgstr "作者 %(author)s 的日志"
 #: templates/zinnia/tags/random_entries.html:9
 #: templates/zinnia/tags/recent_entries.html:9
 msgid "Not yet entries."
-msgstr "没有日志"
+msgstr "尚未有日志"
 
 #: templates/zinnia/entry_archive_base.html:47
 msgid "More recent entries"
@@ -512,7 +512,7 @@ msgstr "更多最近日志"
 #: templates/zinnia/entry_archive_base.html:51
 #: templates/zinnia/entry_list.html:4
 msgid "Page"
-msgstr "页面"
+msgstr "页码"
 
 #: templates/zinnia/entry_archive_base.html:55
 msgid "More old entries"
@@ -520,16 +520,16 @@ msgstr "更多以前日志"
 
 #: templates/zinnia/entry_detail.html:9
 msgid "RSS Feed of comments on"
-msgstr "评论的 RSS 种子"
+msgstr "评论的 RSS 源"
 
 #: templates/zinnia/entry_detail.html:24
 #, fuzzy
 msgid "Next entry"
-msgstr "日志"
+msgstr "下一篇日志"
 
 #: templates/zinnia/entry_detail.html:34
 msgid "Previous entry"
-msgstr ""
+msgstr "上一篇日志"
 
 #: templates/zinnia/entry_detail.html:44
 msgid "Related entries"
@@ -541,7 +541,7 @@ msgstr "类似日志"
 
 #: templates/zinnia/entry_detail.html:95
 msgid "Not yet comments !"
-msgstr "没有评论"
+msgstr "尚未有评论"
 
 #: templates/zinnia/entry_list.html:4
 msgid "Category"
@@ -557,7 +557,7 @@ msgstr "搜索结果"
 
 #: templates/zinnia/entry_search.html:7
 msgid "RSS Feed of search result of"
-msgstr "搜索结果的 RSS 种子"
+msgstr "搜索结果的 RSS 源"
 
 #: templates/zinnia/entry_search.html:19
 #, python-format
@@ -584,7 +584,7 @@ msgstr "没有找到"
 
 #: templates/zinnia/skeleton.html:22
 msgid "RSS Feed of lastest entries"
-msgstr "最新日志的 RSS 种子"
+msgstr "最新日志的 RSS 源"
 
 #: templates/zinnia/tag_list.html:7
 msgid "Tag list"
@@ -592,7 +592,7 @@ msgstr "标签列表"
 
 #: templates/zinnia/tags/archives_entries.html:11
 msgid "Not yet archives."
-msgstr "没有归类"
+msgstr "没有的归档"
 
 #: templates/zinnia/tags/categories.html:6
 #, python-format
@@ -615,7 +615,7 @@ msgstr[1] ""
 
 #: templates/zinnia/tags/categories.html:14
 msgid "Not yet categories."
-msgstr "没有类别"
+msgstr "没有的类别"
 
 #: templates/zinnia/tags/popular_entries.html:7
 msgid "comment"
