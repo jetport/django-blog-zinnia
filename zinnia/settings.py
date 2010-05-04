@@ -27,3 +27,4 @@ except ImportError:
 TWITTER_USER = getattr(settings, 'TWITTER_USER', '')
 TWITTER_PASSWORD = getattr(settings, 'TWITTER_PASSWORD', '')
 
+SECTIONS = getattr(settings, 'ZINNIA_SECTIONS', () )
