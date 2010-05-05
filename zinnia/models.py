@@ -111,7 +111,9 @@ class Entry(models.Model):
     @property
     def word_count(self):
         """Count the words of an entry"""
-        return len(striptags(self.html_content).split())
+         strs=striptags(self.html_content).split()
+        return len(  ''.join([ '-' for w in strs if w.isalnum() or w.isalpha() ]+\
+            [ w for w in strs if not(w.isalnum() or w.isalpha()) ])   )
 
     @property
     def is_actual(self):
