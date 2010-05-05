@@ -166,10 +166,11 @@ class EntryAdmin(admin.ModelAdmin):
 
     def formfield_for_manytomany(self, db_field, request, **kwargs):
         """Filters the disposable authors"""
-        if db_field.name == 'authors' and \
-               not request.user.has_perm('zinnia.can_change_author'):
-            kwargs['queryset'] = User.objects.filter(pk=request.user.pk)
-            return db_field.formfield(**kwargs)
+        if db_field.name == 'authors':
+            if request.user.has_perm('zinnia.can_change_author'):
+                kwargs['queryset'] = User.objects.filter(is_staff=True)
+            else:
+                kwargs['queryset'] = User.objects.filter(pk=request.user.pk)
 
         elif db_field.name == 'categories':
             c=self.get_sections(request)
